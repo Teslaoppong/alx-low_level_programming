@@ -1,22 +1,39 @@
 #include "main.h"
-
 /**
- * print_binary - prints the binary representation
- * of a number.
- * @n: unsigned long int.
- *
- * Return: no return.
- */
+  * print_binary - print bin
+  * @n: converted to bin
+  */
 void print_binary(unsigned long int n)
 {
-	if (n >> 0)
+	unsigned long int and, div;
+	char f;
+
+	div = _pow_(2, sizeof(unsigned long int) * 8 - 1);
+	for (; div != 0; div >>= 1)
 	{
-		if (n >> 1)
-			print_binary(n >> 1);
-		_putchar((n & 1) + '0');
+		and = n & div;
+		if (and == div)
+		{
+			f = 1;
+			_putchar('1');
+		}
+		else if (f == 1 || div == 1)
+			_putchar('0');
 	}
-	else
-	{
-		_putchar('0');
-	}
+}
+/**
+  * _pow_ - perform exponentiation
+  * @base: the base
+  * @exp: the exponent
+  *
+  * Return: base to the power of exp
+  */
+unsigned long int _pow_(unsigned int base, unsigned int exp)
+{
+	unsigned int i;
+	unsigned long int ans = 1;
+
+	for (i = 1; i <= exp; i++)
+		ans *= base;
+	return (ans);
 }
