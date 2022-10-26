@@ -1,20 +1,20 @@
 #include "main.h"
-#include <math.h>
+
 /**
- * _pow_recursion - basic math raise to power
- *@x: number to be powered
- *@y: number that will power
- * Return: x^y
+ * _pow_recursion - return the value of x raised to power y
+ * @x: integer
+ * @y: number to which x will be powered to
+ * Return: x to power y
  */
+
 int _pow_recursion(int x, int y)
 {
-	if (y < 0)
-	{
-		return (-1);
-	}
-	else if (y == 0)
-	{
-		return (1);
-	}
-	return (_pow_recursion(x, y - 1) * x);
+if (y < 0)
+return (-1);
+else if (y == 0)
+return (1);
+else if (y == 1)
+return (x);
+
+return (x * _pow_recursion(x, y - 1));
 }

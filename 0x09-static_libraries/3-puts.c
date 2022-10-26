@@ -1,12 +1,19 @@
 #include "main.h"
-#include <stdio.h>
+
 /**
- * _puts - Outputting a srting
- * from the standard output
- * @str: String from Main file
- * Return: 0
+ * _puts - function that prints a string, followed by a new line
+ *
+ * @str: the variable pointer at str
+ *
  */
+
 void _puts(char *str)
 {
-	puts(str);
+int i;
+
+for (i = 0; str[i] != '\0' ; i++)
+{
+_putchar(str[i]);
+}
+_putchar('\n');
 }
