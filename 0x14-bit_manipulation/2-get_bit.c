@@ -1,21 +1,27 @@
 #include "main.h"
 
 /**
- * get_bit - return one bit
- * @n: the number
- * @index: the position to read the bit
- * Description: return 1 bit
- * section header: the header of this function is holberton.h
- * Return: the value of the bit
+ * get_bit - returns the value of a bit at a given
+ * index.
+ * @n: unsigned long int input.
+ * @index: index of the bit.
+ *
+ * Return: value of the bit.
  */
 int get_bit(unsigned long int n, unsigned int index)
 {
-	unsigned long int bit;
+	unsigned int x;
 
-	if (index > 64)
-		return (-1);
+	if (n == 0 && index < 64)
+		return (0);
 
-	bit = n >> index;
+	for (x = 0; x <= 63; n >>= 1, x++)
+	{
+		if (index == x)
+		{
+			return (n & 1);
+		}
+	}
 
-	return (bit & 0x1);
+	return (-1);
 }

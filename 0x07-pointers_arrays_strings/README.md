@@ -1,1 +1,2 @@
-# 0x07. C - Even more pointers, arrays and strings
+Alx-low_level_engineering
+0x07-pointers_arrays_strings
