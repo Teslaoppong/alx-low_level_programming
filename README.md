@@ -1,1 +1,1 @@
-# ALX Low Programming
+# Solutions to tasks on 0x1C. C - Makefiles
